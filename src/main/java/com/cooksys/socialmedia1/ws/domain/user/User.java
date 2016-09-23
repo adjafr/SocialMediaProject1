@@ -23,18 +23,23 @@ public class User
 	@Column(nullable=false)
 	private String name;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
-	private List<Tweet> tweets;
-	
 	@Column(nullable=false)
 	private String username;
 	
 	@Column(nullable=false)
 	private String password;
 	
-	@ManyToMany(fetch=FetchType.LAZY)
-	@JoinTable(name="user_followers")
 	@JsonIgnore
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)  //, cascade = CascadeType.REMOVE
+	private List<Tweet> tweets;
+	
+	
+	@JsonIgnore
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "user_followers")  //, joinColumns = {
+//	@JoinColumn(name = "user_id", nullable = false)}, inverseJoinColumns = {
+//	@JoinColumn(name = "follower_id", nullable = false)
+//	})
 	private List<User> followers;
 	
 	@JsonIgnore
@@ -61,16 +66,6 @@ public class User
 		this.name = name;
 	}
 
-	public List<Tweet> getTweets()
-	{
-		return tweets;
-	}
-
-	public void setTweets(List<Tweet> tweets)
-	{
-		this.tweets = tweets;
-	}
-
 	public String getUsername()
 	{
 		return username;
@@ -89,6 +84,16 @@ public class User
 	public void setPassword(String password)
 	{
 		this.password = password;
+	}
+
+	public List<Tweet> getTweets()
+	{
+		return tweets;
+	}
+
+	public void setTweets(List<Tweet> tweets)
+	{
+		this.tweets = tweets;
 	}
 
 	public List<User> getFollowers()
@@ -110,6 +115,8 @@ public class User
 	{
 		this.following = following;
 	}
+
+	
 
 
 

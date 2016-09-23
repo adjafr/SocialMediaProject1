@@ -21,15 +21,17 @@ public class Tweet
 	private Integer id;
 	
 	@Column(nullable=false)
-	private String tweet;
-	
-	@JsonIgnore
-	@ManyToOne(fetch=FetchType.LAZY)  //check this
-	private User user;//private Set<User> users;
-
+	String timeStamp = new SimpleDateFormat("EEE yyyy MMM dd hh:mm:ss a z").format(new Date());
 	
 	@Column(nullable=false)
-	String timeStamp = new SimpleDateFormat("EEE yyyy MMM dd hh:mm:ss a z").format(new Date());
+	private String tweet;
+	
+
+	
+//	@JsonIgnore
+	@ManyToOne(optional = false)  //check this
+	private User user;//private Set<User> users;
+
 
 
 	public Integer getId()
@@ -38,34 +40,12 @@ public class Tweet
 	}
 
 
+
 	public void setId(Integer id)
 	{
 		this.id = id;
 	}
 
-
-	public String getTweet()
-	{
-		return tweet;
-	}
-
-
-	public void setTweet(String tweet)
-	{
-		this.tweet = tweet;
-	}
-
-
-	public User getUser()
-	{
-		return user;
-	}
-
-
-	public void setUser(User user)
-	{
-		this.user = user;
-	}
 
 
 	public String getTimeStamp()
@@ -74,13 +54,40 @@ public class Tweet
 	}
 
 
+
 	public void setTimeStamp(String timeStamp)
 	{
 		this.timeStamp = timeStamp;
 	}
 
 
-	
+
+	public String getTweet()
+	{
+		return tweet;
+	}
+
+
+
+	public void setTweet(String tweet)
+	{
+		this.tweet = tweet;
+	}
+
+
+
+	public User getUser()
+	{
+		return user;
+	}
+
+
+
+	public void setUser(User user)
+	{
+		this.user = user;
+	}
+
 	
 	
 	

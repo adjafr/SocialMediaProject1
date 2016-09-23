@@ -12,16 +12,16 @@ public class UserResponse
 	
 	private String username;
 	
-	private List<User> following;
-	
-	private List<User> followers;
+//	private List<UserResponse> following;
+//	
+//	private List<UserResponse> followers;
 	
 	public UserResponse(User user) {
 		this.setId(user.getId());
 		this.setName(user.getName());
 		this.setUsername(user.getUsername());
-		this.setFollowing(user.getFollowing());
-		this.setFollowers(user.getFollowers());
+//		this.setFollowing(UserResponse.getUsers(user.getFollowing()));
+//		this.setFollowers(UserResponse.getUsers(user.getFollowers()));
 	}
 	
 	public static List<UserResponse> getUsers(List<User> list) {
@@ -59,24 +59,24 @@ public class UserResponse
 		this.username = username;
 	}
 
-	public List<User> getFollowing()
-	{
-		return following;
-	}
+//	public List<UserResponse> getFollowing()
+//	{
+//		return following;
+//	}
+//
+//	public void setFollowing(List<UserResponse> following)
+//	{
+//		this.following = following;
+//	}
 
-	public void setFollowing(List<User> following)
-	{
-		this.following = following;
-	}
-
-	public List<User> getFollowers()
-	{
-		return followers;
-	}
-
-	public void setFollowers(List<User> followers)
-	{
-		this.followers = followers;
-	}
+//	public List<UserResponse> getFollowers()
+//	{
+//		return followers;
+//	}
+//
+//	public void setFollowers(List<UserResponse> followers)
+//	{
+//		this.followers = followers;
+//	}
 
 }

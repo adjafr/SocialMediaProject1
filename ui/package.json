@@ -1,0 +1,54 @@
+{
+  "name": "socialmedia1",
+  "version": "1.0.0",
+  "description": "first social media project",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "angular-ui-router": "^1.0.0-beta.2",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-latest": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.22.0",
+    "jquery": "^3.1.0",
+    "ng-annotate-loader": "^0.1.1",
+    "ngtemplate-loader": "^1.3.1",
+    "standard": "^8.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.3.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --port=8000"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "angular"
+    ]
+  },
+  "keywords": [],
+  "author": "AJ Fraser",
+  "license": "ISC"
+}
